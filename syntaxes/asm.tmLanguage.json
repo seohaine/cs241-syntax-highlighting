@@ -4,36 +4,36 @@
   "patterns": [
     {
       "name": "asm.comment",
-      "begin": ";",
+      "begin": ";|//",
       "end": "\\n"
     },
     {
       "name": "asm.register",
-      "match": "\\$([0-9])+"
+      "match": "\\$([0-9])+|\\t([0-9])+|\\a([0-3])+|\\s([0-7])+|\\f([0-31])+|r0|at|v0|v1|k0|k1|gp|sp|fp|ra|hi|lo"
     },
     {
       "name": "asm.literal",
-      "match": "lis|\\.word"
+      "match": "lis|\\.word|.byte|.halfword"
     },
     {
       "name": "asm.operation",
-      "match": "add|sub|multu|mult|divu|div|mflo|mfhi"
+      "match": "add|sub|multu|mult|divu|div|mflo|mfhi|mfc1|mtc1"
     },
     {
       "name": "asm.loadstore",
-      "match": "lw|sw"
+      "match": "lb|lbu|lh|lhu|lw|sw|lwc1|swc1"
     },
     {
       "name": "asm.setless",
-      "match": "sltu|slt"
+      "match": "sltu|slt|slti|sltiu"
     },
     {
       "name": "asm.branch",
-      "match": "beq|bne"
+      "match": "beq|bne|beqz|bnez|beqz|beql|bnel|beqzl|bnezl"
     },
     {
       "name": "asm.jump",
-      "match": "jr|jalr"
+      "match": "j|jr|jalr"
     },
     {
       "name": "asm.constant",
